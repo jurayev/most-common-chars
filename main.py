@@ -3,7 +3,8 @@ from collections import Counter
 import unittest
 import functools
 
-def most_common_chars1(string: str) -> List[str]:
+# Type Annotations showcase
+def most_common_chars(string: str) -> List[str]:
   most_common: List[Tuple[str, int]] = Counter(string).most_common()
   i: int = 0
   k: str
@@ -13,17 +14,18 @@ def most_common_chars1(string: str) -> List[str]:
     i += 1
   return most_common
 
-def most_common_chars(string):
-  most_common = dict()
-  for char in string:
-    if char in most_common:
-      most_common[char] += 1
-    else:
-      most_common[char] = 1 
-  most_common = [(v, k) for k, v in most_common.items()]  
-  most_common.sort(key=lambda a: (a[0], -ord(a[1])), reverse=True)  
-  most_common = [v for k, v in most_common]
-  return most_common
+# Uncomment to run unittests
+# def most_common_chars(string):
+#   most_common = dict()
+#   for char in string:
+#     if char in most_common:
+#       most_common[char] += 1
+#     else:
+#       most_common[char] = 1 
+#   most_common = [(v, k) for k, v in most_common.items()]  
+#   most_common.sort(key=lambda a: (a[0], -ord(a[1])), reverse=True)  
+#   most_common = [v for k, v in most_common]
+#   return most_common
 
 class TestMostCommon(unittest.TestCase):
 
