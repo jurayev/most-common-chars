@@ -1,4 +1,4 @@
-# most-common_chars
+# most-common-chars
 
 ## Solution 1
 Uses a counter datastructure to count the most common chars of the input.
