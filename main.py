@@ -3,6 +3,7 @@ from collections import Counter
 import unittest
 import functools
 
+# Solution 1
 # Type Annotations showcase
 def most_common_chars(string: str) -> List[str]:
   most_common: List[Tuple[str, int]] = Counter(string).most_common()
@@ -14,6 +15,7 @@ def most_common_chars(string: str) -> List[str]:
     i += 1
   return most_common
 
+# Solution 2
 # Uncomment to run unittests
 # def most_common_chars(string):
 #   most_common = dict()
@@ -79,8 +81,8 @@ class TestMostCommon(unittest.TestCase):
 
   @log
   def test_mixed_chars(self):
-    input_data = "!@###333_+0"
-    expected = ["#", "3", "!", "@", "_", "+", "0"]
+    input_data = "!###333+@"
+    expected = ["#", "3", "!", "+", "@"]
     actual = most_common_chars(input_data)
     self.assertListEqual(actual, expected, "Chars '#' and '3' must be the most common\n")
 
